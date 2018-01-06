@@ -16,6 +16,7 @@ struct StencilArrow: Arrow {
         let result = try renderable.render(context(archerfile: archerfile, arguments: arguments))
         if let destination = destination {
             try Path(destination).write(result)
+            print("🏹  Updated \(destination)")
         } else {
             print(result)
         }

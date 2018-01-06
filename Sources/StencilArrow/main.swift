@@ -6,13 +6,19 @@ struct StencilArrow: Arrow {
     let arrow: String
     let help: String?
     let template: String
+    let destination: String?
     let metadataName: String?
     let argumentsName: String?
     let searchPaths: [String]?
 
     func fire(archerfile: Archerfile, arguments: [String]) throws {
         let renderable = try systemLoader.loadTemplate(name: template, environment: environment)
-        print(try renderable.render(context(archerfile: archerfile, arguments: arguments)))
+        let result = try renderable.render(context(archerfile: archerfile, arguments: arguments))
+        if let destination = destination {
+            try Path(destination).write(result)
+        } else {
+            print(result)
+        }
     }
 
     func context(archerfile: Archerfile, arguments: [String]) -> [String: Any] {

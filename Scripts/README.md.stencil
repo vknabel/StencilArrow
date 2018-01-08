@@ -1,0 +1,22 @@
+{% include "BASE_README.md.stencil" %}
+
+{% block subtitle %}
+Generate files out of your Archerfile (like this one).
+{% endblock %}
+
+{% block example %}
+Render [Stencil](https://github.com/kylef/Stencil)-Templates with contents of your Archerfile.
+```json
+{
+	"scripts": {
+        "readme": {
+            "arrow": "vknabel/StencilArrow",
+            "template": "README.md.stencil",
+            "destination": "README.md",
+        	"searchPaths": ["Scripts"]
+    	}
+    }
+}
+```
+This will insert your metadata into your template and write its contents to `README.md`.
+{% endblock %}

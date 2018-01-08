@@ -12,7 +12,7 @@ struct StencilArrow: Arrow {
     let searchPaths: [String]?
 
     func fire(archerfile: Archerfile, arguments: [String]) throws {
-        let renderable = try systemLoader.loadTemplate(name: template, environment: environment)
+        let renderable = try environment.loadTemplate(name: template)
         let result = try renderable.render(context(archerfile: archerfile, arguments: arguments))
         if let destination = destination {
             try Path(destination).write(result)
@@ -40,7 +40,7 @@ struct StencilArrow: Arrow {
     }
 
     var environment: Environment {
-        return Environment()
+        return Environment(loader: systemLoader)
     }
 }
 

@@ -1,0 +1,78 @@
+{
+    "name": "Bash Arrow",
+    "github": "vknabel/BashArrow",
+    "license": "MIT",
+    "archery": {
+        "github": "vknabel/Archery"
+    },
+    "version": "0.1.0",
+    "apiLevel": 1,
+    "repository": "https://github.com/vknabel/BashArrow",
+    "contributors": [
+        {
+            "github": "vknabel",
+            "email": "dev@vknabel.com",
+            "name": "Valentin Knabel",
+            "twitter": "vknabel"
+        }
+    ],
+    "arrowOptions": [
+        {
+            "name": "template",
+            "type": "String",
+            "default": "Required"
+        },
+        {
+            "name": "destination",
+            "type": "String?",
+            "default": "Print to stdout"
+        },
+        {
+            "name": "metadataName",
+            "type": "String?",
+            "default": "Globally available. Contains the Archerfile"
+        },
+        {
+            "name": "argumentsName",
+            "type": "String?",
+            "default": "`arguments` contains all command line args"
+        },
+        {
+            "name": "searchPaths",
+            "type": "[String]?",
+            "default": "`[\".\"]` search on current directory"
+        }
+    ],
+    "scripts": {
+        "clean": {
+            "arrow": "vknabel/BashArrow",
+            "command": "rm -rf .archery && swift package clean",
+            "printCommandBeforeExecution": true
+        },
+        "xcopen": {
+            "arrow": "vknabel/BashArrow",
+            "command": "swift package generate-xcodeproj && open *.xcodeproj"
+        },
+        "format": {
+            "arrow": "vknabel/BashArrow",
+            "help": "Reformats all Swift code. Requires swiftformat to be installed globally.\nSee https://github.com/nicklockwood/SwiftFormat/pull/183",
+            "comment": "Requires https://github.com/nicklockwood/SwiftFormat/pull/183",
+            "command": "swiftformat ."
+        },
+        "generate": {
+            "arrow": "vknabel/ArcheryArrow",
+            "run": [
+                "readme",
+                "format"
+            ],
+            "scripts": {
+                "readme": {
+                    "arrow": "vknabel/StencilArrow",
+                    "template": "README.md.stencil",
+                    "destination": "README.md",
+                    "searchPaths": ["Scripts"]
+                }
+            }
+        }
+    }
+}

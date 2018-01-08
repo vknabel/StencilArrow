@@ -2,7 +2,7 @@
 
 {% block subtitle %}{% endblock %}For more information about Archery itself head to [{{archery.github}}](https://github.com/{{archery.github}}).
 
-{% block example %}{% enblock %}
+{% block example %}{% endblock %}
 
 ## Available Options
 

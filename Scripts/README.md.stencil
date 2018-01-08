@@ -1,4 +1,4 @@
-{% include "BASE_README.md.stencil" %}
+{% extends "BASE_README.md.stencil" %}
 
 {% block subtitle %}
 Generate files out of your Archerfile (like this one).

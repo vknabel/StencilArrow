@@ -26,7 +26,7 @@ struct StencilArrow: Arrow {
         var context: [String: Any]
         if let metadataName = metadataName {
             context = [
-                metadataName: archerfile.metadata
+                metadataName: archerfile.metadata,
             ]
         } else {
             context = archerfile.metadata

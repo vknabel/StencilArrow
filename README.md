@@ -1,4 +1,4 @@
-# 🏹 Bash Arrow
+# 🏹 Stencil Arrow
 
 
 Generate files out of your Archerfile (like this one).

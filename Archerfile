@@ -1,13 +1,13 @@
 {
-    "name": "Bash Arrow",
-    "github": "vknabel/BashArrow",
+    "name": "Stencil Arrow",
+    "github": "vknabel/StencilArrow",
     "license": "MIT",
     "archery": {
         "github": "vknabel/Archery"
     },
     "version": "0.1.0",
     "apiLevel": 1,
-    "repository": "https://github.com/vknabel/BashArrow",
+    "repository": "https://github.com/vknabel/StencilArrow",
     "contributors": [
         {
             "github": "vknabel",
@@ -63,7 +63,8 @@
             "arrow": "vknabel/ArcheryArrow",
             "run": [
                 "readme",
-                "format"
+                "format",
+                "docs"
             ],
             "scripts": {
                 "readme": {
@@ -71,6 +72,10 @@
                     "template": "README.md.stencil",
                     "destination": "README.md",
                     "searchPaths": ["Scripts"]
+                },
+                "docs": {
+                    "arrow": "vknabel/BashArrow",
+                    "command": "if which jazzy >/dev/null; then jazzy; fi"
                 }
             }
         }

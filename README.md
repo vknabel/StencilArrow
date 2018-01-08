@@ -25,11 +25,11 @@ This will insert your metadata into your template and write its contents to `REA
 
 | Name | Type | Default |
 |------|------|---------|
-| template | String | Required |
-| destination | String? | Print to stdout |
-| metadataName | String? | Globally available. Contains the Archerfile |
-| argumentsName | String? | `arguments` contains all command line args |
-| searchPaths | [String]? | `["."]` search on current directory |
+| template | `String` | Required |
+| destination | `String?` | Print to stdout |
+| metadataName | `String?` | Globally available. Contains the Archerfile |
+| argumentsName | `String?` | `arguments` contains all command line args |
+| searchPaths | `[String]?` | `["."]` search on current directory |
 
 ## Contributors
 * Valentin Knabel, [@vknabel](https://github.com/vknabel), dev@vknabel.com, [@vknabel](https://twitter.com/vknabel) on Twitter

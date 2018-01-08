@@ -12,6 +12,11 @@ let package = Package(
     targets: [
         .target(
             name: "StencilArrow",
-            dependencies: ["ArrowKit", "Stencil", "PathKit"]),
+            dependencies: ["StencilArrowKit"]
+        ),
+        .target(
+            name: "StencilArrowKit",
+            dependencies: ["ArrowKit", "Stencil", "PathKit"]
+        ),
     ]
 )

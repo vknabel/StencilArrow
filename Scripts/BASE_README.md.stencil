@@ -8,7 +8,7 @@
 
 | Name | Type | Default |
 |------|------|---------|{% for option in arrowOptions %}
-| {{option.name}} | {{option.type}} | {{option.default}} |{% endfor %}
+| {{option.name}} | `{{option.type}}` | {{option.default}} |{% endfor %}
 
 ## Contributors
 {% for user in contributors %}* {{user.name}}, [@{{user.github}}](https://github.com/{{user.github}}){% if user.email %}, {{user.email}}{% endif %}{% if user.twitter %}, [@{{user.twitter}}](https://twitter.com/{{user.twitter}}) on Twitter{% endif %}

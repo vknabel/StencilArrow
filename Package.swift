@@ -6,8 +6,8 @@ let package = Package(
     name: "StencilArrow",
     dependencies: [
         .package(url: "https://github.com/vknabel/ArrowKit.git", .branch("master")),
-        .package(url: "https://github.com/kylef/Stencil.git", from: "0.10.1"),
-        .package(url: "https://github.com/kylef/PathKit.git", from: "0.8.0"),
+        .package(url: "https://github.com/kylef/Stencil.git", from: "0.11.0"),
+        .package(url: "https://github.com/kylef/PathKit.git", from: "0.9.1"),
     ],
     targets: [
         .target(

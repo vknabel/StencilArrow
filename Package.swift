@@ -4,6 +4,16 @@ import PackageDescription
 
 let package = Package(
     name: "StencilArrow",
+    products: [
+        .executable(
+            name: "StencilArrow",
+            targets: ["StencilArrow"]
+        ),
+        .library(
+            name: "StencilArrowKit",
+            targets: ["StencilArrowKit"]
+        ),
+    ],
     dependencies: [
         .package(url: "https://github.com/vknabel/ArrowKit.git", .branch("master")),
         .package(url: "https://github.com/kylef/Stencil.git", from: "0.11.0"),

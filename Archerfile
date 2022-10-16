@@ -1,83 +1,83 @@
 {
-    "name": "Stencil Arrow",
-    "github": "vknabel/StencilArrow",
-    "license": "MIT",
-    "archery": {
-        "github": "vknabel/Archery"
-    },
-    "version": "0.1.2",
-    "apiLevel": 1,
-    "repository": "https://github.com/vknabel/StencilArrow",
-    "contributors": [
-        {
-            "github": "vknabel",
-            "email": "dev@vknabel.com",
-            "name": "Valentin Knabel",
-            "twitter": "vknabel"
-        }
+  "name": "Stencil Arrow",
+  "github": "vknabel/StencilArrow",
+  "license": "MIT",
+  "archery": { "github": "vknabel/Archery" },
+  "version": "0.1.3",
+  "apiLevel": 1,
+  "repository": "https://github.com/vknabel/StencilArrow",
+  "contributors":
+    [
+      {
+        "github": "vknabel",
+        "email": "dev@vknabel.com",
+        "name": "Valentin Knabel",
+        "twitter": "vknabel",
+      },
     ],
-    "arrowOptions": [
-        {
-            "name": "template",
-            "type": "String",
-            "default": "Required"
-        },
-        {
-            "name": "destination",
-            "type": "String?",
-            "default": "Print to stdout"
-        },
-        {
-            "name": "metadataName",
-            "type": "String?",
-            "default": "Globally available. Contains the Archerfile"
-        },
-        {
-            "name": "argumentsName",
-            "type": "String?",
-            "default": "`arguments` contains all command line args"
-        },
-        {
-            "name": "searchPaths",
-            "type": "[String]?",
-            "default": "`[\".\"]` search on current directory"
-        }
+  "arrowOptions":
+    [
+      { "name": "template", "type": "String", "default": "Required" },
+      {
+        "name": "destination",
+        "type": "String?",
+        "default": "Print to stdout",
+      },
+      {
+        "name": "metadataName",
+        "type": "String?",
+        "default": "Globally available. Contains the Archerfile",
+      },
+      {
+        "name": "argumentsName",
+        "type": "String?",
+        "default": "`arguments` contains all command line args",
+      },
+      {
+        "name": "searchPaths",
+        "type": "[String]?",
+        "default": '`["."]` search on current directory',
+      },
     ],
-    "scripts": {
-        "clean": {
-            "arrow": "vknabel/BashArrow",
-            "command": "rm -rf .archery && swift package clean",
-            "printCommandBeforeExecution": true
+  "scripts":
+    {
+      "clean":
+        {
+          "arrow": "vknabel/BashArrow",
+          "command": "rm -rf .archery && swift package clean",
+          "printCommandBeforeExecution": true,
         },
-        "xcopen": {
-            "arrow": "vknabel/BashArrow",
-            "command": "swift package generate-xcodeproj && open *.xcodeproj"
+      "xcopen":
+        {
+          "arrow": "vknabel/BashArrow",
+          "command": "swift package generate-xcodeproj && open *.xcodeproj",
         },
-        "format": {
-            "arrow": "vknabel/BashArrow",
-            "help": "Reformats all Swift code. Requires swiftformat to be installed globally.\nSee https://github.com/nicklockwood/SwiftFormat/pull/183",
-            "comment": "Requires https://github.com/nicklockwood/SwiftFormat/pull/183",
-            "command": "swiftformat ."
+      "format":
+        {
+          "arrow": "vknabel/BashArrow",
+          "help": "Reformats all Swift code. Requires swiftformat to be installed globally.\nSee https://github.com/nicklockwood/SwiftFormat/pull/183",
+          "comment": "Requires https://github.com/nicklockwood/SwiftFormat/pull/183",
+          "command": "swiftformat .",
         },
-        "generate": {
-            "arrow": "vknabel/ArcheryArrow",
-            "run": [
-                "readme",
-                "format",
-                "docs"
-            ],
-            "scripts": {
-                "readme": {
-                    "arrow": "vknabel/StencilArrow",
-                    "template": "README.md.stencil",
-                    "destination": "README.md",
-                    "searchPaths": ["Scripts"]
+      "generate":
+        {
+          "arrow": "vknabel/ArcheryArrow",
+          "run": ["readme", "format", "docs"],
+          "scripts":
+            {
+              "readme":
+                {
+                  "arrow": "vknabel/StencilArrow",
+                  "template": "README.md.stencil",
+                  "destination": "README.md",
+                  "searchPaths": ["Scripts"],
                 },
-                "docs": {
-                    "arrow": "vknabel/BashArrow",
-                    "command": "if which jazzy >/dev/null; then jazzy; fi"
-                }
-            }
-        }
-    }
+              "docs":
+                {
+                  "arrow": "vknabel/BashArrow",
+                  "command": "if which jazzy >/dev/null; then jazzy; fi",
+                },
+            },
+        },
+    },
 }

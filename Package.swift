@@ -1,4 +1,4 @@
-// swift-tools-version:5.0
+// swift-tools-version:5.4
 
 import PackageDescription
 
@@ -20,7 +20,7 @@ let package = Package(
         .package(url: "https://github.com/kylef/PathKit.git", from: "0.9.1"),
     ],
     targets: [
-        .target(
+        .executableTarget(
             name: "StencilArrow",
             dependencies: ["StencilArrowKit"]
         ),
